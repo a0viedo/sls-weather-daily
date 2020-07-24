@@ -1,0 +1,18 @@
+service: weather-daily
+
+provider:
+  name: aws
+  stage: ${opt:stage, env:NODE_ENV, "dev"}
+  runtime: nodejs12.x
+  memorySize: 1600
+  environment: ${file(.env.yml):}
+  layers:
+    # https://github.com/shelfio/chrome-aws-lambda-layer
+    - arn:aws:lambda:${self:provider.region}:764866452798:layer:chrome-aws-lambda:10
+
+functions:
+  load-data:
+    handler: index.handler
+    timeout: 20
+    events:
+      - schedule: cron(0 9 ? * * *)

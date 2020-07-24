@@ -1,0 +1,15 @@
+{
+  "name": "sls-weather-daily",
+  "version": "1.0.0",
+  "description": "Scrap weather daily and write it down to a spreadsheet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Alejandro Oviedo <alejandro.oviedo.g@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "googleapis": "^55.0.0"
+  }
+}
